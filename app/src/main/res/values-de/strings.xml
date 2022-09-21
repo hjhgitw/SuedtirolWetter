@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="ic_menu_rate">Bewerten</string>
+    <string name="ic_menu_exit">Beenden</string>
+    <string name="schlanders">Schlanders</string>
+	<string name="meran">Meran</string>
+	<string name="bozen">Bozen</string>
+	<string name="sterzing">Sterzing</string>
+	<string name="brixen">Brixen</string>
+	<string name="bruneck">Bruneck</string>
+	<string name="dialog_title">Bitte bewerte das App mit 5 Sternen :)</string>
+	<string name="dialog_rate">Ok bewerten</string>
+	<string name="dialog_later">Später</string>
+</resources>

@@ -1,31 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	xmlns:ads="http://schemas.android.com/apk/res-auto"
-	tools:context=".MainActivity">
+	android:fitsSystemWindows="true"
+	android:orientation="vertical">
 
+	<!-- view for AdMob Interstitial Ad -->
+	<!-- Layout for content is here. This can be a RelativeLayout  -->
 
 	<androidx.appcompat.widget.Toolbar
-		android:id="@+id/tooolbar"
+		android:id="@+id/toolbar"
 		android:layout_width="match_parent"
-		android:layout_height="?attr/actionBarSize"
+		android:layout_height="30dp"
 		android:background="?attr/colorPrimary"
-		android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+		android:minHeight="?attr/actionBarSize"
+		app:titleTextColor="@android:color/white">
 
 		<TextView
 			android:id="@+id/toolbar_title"
-			android:layout_gravity="center"
 			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="start"
 			android:textColor="#FFFFFF"
-			android:textSize="24dp"
-			android:layout_height="wrap_content">
+			android:textSize="24sp"/>
 
-		</TextView>
+		<TextView
+			android:id="@+id/toolbar_http"
+			android:layout_marginLeft="10sp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="left"
+			android:text="loading"
+			android:textColor="#FFFFFF"
+			android:textSize="11sp"/>
 
 	</androidx.appcompat.widget.Toolbar>
-    <!-- view for AdMob Interstitial Ad -->
 
 	<WebView
 		android:id="@+id/webview"
@@ -43,12 +54,4 @@
 		ads:adUnitId="a14f896528043fb"
 		ads:refreshInterval="60" /-->
 
-    <Button
-        android:id="@+id/next_level_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/next_level" />
-
-</RelativeLayout>
+</LinearLayout>

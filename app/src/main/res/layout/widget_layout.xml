@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="3dip"
+    android:background="@drawable/myshape" >
+
+    <TextView
+        android:id="@+id/textViewWetterdatenUeberschrift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center_horizontal"
+        android:shadowColor="#c0c0c0"
+        android:shadowDx="1.0"
+        android:shadowDy="1.0"
+        android:text="wetterdatum"
+        android:textColor="#fff"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/imageViewIcon"
+        android:layout_width="45dip"
+        android:layout_height="45dip"
+        android:layout_alignLeft="@+id/textViewWetterdatenUeberschrift"
+        android:layout_below="@id/textViewWetterdatenUeberschrift"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_1" />
+
+    <TextView
+        android:id="@+id/textViewHoechsttemperatur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewWetterdatenUeberschrift"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/imageViewIcon"
+        android:text="load"
+        android:textColor="#fff"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textViewTiefsttemperatur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewHoechsttemperatur"
+        android:layout_below="@+id/textViewHoechsttemperatur"
+        android:layout_marginTop="3dp"
+        android:text="update"
+        android:textColor="#fff"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/textViewdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewWetterdatenUeberschrift"
+        android:layout_alignRight="@+id/textViewTiefsttemperatur"
+        android:layout_below="@+id/textViewTiefsttemperatur"
+        android:layout_marginTop="3dip"
+        android:text="."
+        android:textColor="#fff"
+        android:textSize="10sp" />
+
+</RelativeLayout>
