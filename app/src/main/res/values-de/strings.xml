@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <string name="ic_menu_rate">Bewerten</string>
-    <string name="ic_menu_exit">Beenden</string>
-    <string name="schlanders">Schlanders</string>
+	<string name="ic_menu_rate">Bewerten</string>
+	<string name="ic_menu_exit">Beenden</string>
+	<string name="schlanders">Schlanders</string>
 	<string name="meran">Meran</string>
 	<string name="bozen">Bozen</string>
 	<string name="sterzing">Sterzing</string>

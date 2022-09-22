@@ -49,11 +49,11 @@ public class WetterdatenXmlHandler extends DefaultHandler {
 			inDayForecast = true;
 		} else if (localName.equalsIgnoreCase("mountainToday")) {
 			inMountainToday = true;
-		}else if (localName.equalsIgnoreCase("mountainTomorrow")) {
+		} else if (localName.equalsIgnoreCase("mountainTomorrow")) {
 			inMountainTomorrow = true;
 		} else if (localName.equalsIgnoreCase("today")) {
 			inToday = true;
-		}else if (localName.equalsIgnoreCase("tomorrow")) {
+		} else if (localName.equalsIgnoreCase("tomorrow")) {
 			inTomorrow = true;
 		}
 
@@ -119,7 +119,7 @@ public class WetterdatenXmlHandler extends DefaultHandler {
 		super.endElement(uri, localName, qName);
 	}
 
-	private void clearString(){
+	private void clearString() {
 		stringBuilder.setLength(0);
 	}
 }

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <string name="ic_menu_rate">Valuta</string>
-    <string name="ic_menu_exit">Esci</string>
-    <string name="schlanders">Silandro</string>
+	<string name="ic_menu_rate">Valuta</string>
+	<string name="ic_menu_exit">Esci</string>
+	<string name="schlanders">Silandro</string>
 	<string name="meran">Merano</string>
 	<string name="bozen">Bolzano</string>
 	<string name="sterzing">Vipiteno</string>
 	<string name="brixen">Bressanone</string>
 	<string name="bruneck">Brunico</string>
- 	<string name="dialog_title">Ti prego, dammi una valutazione con 5 stelle :)</string>
+	<string name="dialog_title">Ti prego, dammi una valutazione con 5 stelle :)</string>
 	<string name="dialog_rate">Ok valuta</string>
 	<string name="dialog_later">più tardi</string>
 </resources>

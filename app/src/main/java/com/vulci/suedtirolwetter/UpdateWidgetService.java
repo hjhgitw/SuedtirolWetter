@@ -1,9 +1,7 @@
 package com.vulci.suedtirolwetter;
 
 
-import android.app.Activity;
 import android.app.IntentService;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -17,7 +15,6 @@ import android.widget.RemoteViews;
 import com.vulci.suedtirolwetter.sax.ProvBulletin;
 import com.vulci.suedtirolwetter.sax.StationData;
 
-import org.apache.http.client.ClientProtocolException;
 import org.xml.sax.SAXException;
 
 import java.io.IOException;
@@ -39,7 +36,7 @@ public class UpdateWidgetService extends IntentService {
 		ComponentName componentName = new ComponentName(this,
 				MyWidgetProvider.class);
 		AppWidgetManager mgr = AppWidgetManager.getInstance(this);
-		int  appWidgetId = -1;
+		int appWidgetId = -1;
 
 		Bundle extras = intent.getExtras();
 		if (extras != null) {
@@ -51,13 +48,13 @@ public class UpdateWidgetService extends IntentService {
 
 
 			int selectedStationId = extras.getInt("open_browser", -1);
-			if(selectedStationId>=0){
+		if(selectedStationId>=0){
 				Intent clickIntent = new Intent(this,
 						MainActivity.class);
 				clickIntent.putExtra("stationId", selectedStationId);
 				clickIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(clickIntent);
-			}
+		}
 		}
 
 		updateAppWidget(this, mgr, componentName, 642, appWidgetId, "");
@@ -81,8 +78,6 @@ public class UpdateWidgetService extends IntentService {
 				provBulletin = SuedtirolWeatherApplication
 						.ladeWetterdaten(myDisplayLang);
 				stationDataMap = provBulletin.getStationDataMap();
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
 			} catch (SAXException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -93,10 +88,12 @@ public class UpdateWidgetService extends IntentService {
 					.getAppWidgetIds(componentName);
 			int length = appWidgetIds.length;
 
+			RemoteViews remoteViews = new RemoteViews(context
+					.getApplicationContext().getPackageName(),
+					R.layout.widget_layout);
+
 			for (int i = 0; i < length; ++i) {
-				RemoteViews remoteViews = new RemoteViews(context
-						.getApplicationContext().getPackageName(),
-						R.layout.widget_layout);
+
 
 				int appWidgetId = appWidgetIds[i];
 				String cityName = prefs.getString("city" + appWidgetId, "");
@@ -145,10 +142,17 @@ public class UpdateWidgetService extends IntentService {
 					remoteViews.setImageViewResource(R.id.imageViewIcon, path);
 				}
 
-				/*Intent clickIntent = new Intent(context,
-						SuedtirolWetterActivity.class);
-				clickIntent.putExtra("stationId", selectedStationId);*/
+				//Intent clickIntent = new Intent(context,
+				//		MainActivity.class);
+				///clickIntent.putExtra("stationId", selectedStationId);
 
+				//remoteViews.notifyAll();
+
+
+			//	context.getApplicationContext().get
+
+				//AppWidgetManager.getInstance(getApplication()).notifyAppWidgetViewDataChanged(appWidgetId, R.layout.widget_layout);
+		/*
 				Intent clickIntent = new Intent(context, UpdateWidgetService.class);
 				clickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
 				clickIntent.putExtra("open_browser", selectedStationId);
@@ -158,7 +162,15 @@ public class UpdateWidgetService extends IntentService {
 						PendingIntent.FLAG_UPDATE_CURRENT);
 				remoteViews.setOnClickPendingIntent(R.id.layout, pendingIntent);
 				appWidgetManager.updateAppWidget(appWidgetId, remoteViews);
+				*/
+				appWidgetManager.updateAppWidget(appWidgetIds[i], remoteViews);
 			}
+
+
+		//	/appWidgetManager.updateAppWidget(appWidgetIds, remoteViews); // views is a RemoteViews that you need to build
+		//	appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.layout.widget_layout);
+
+
 		} else {
 			Log.d(LOG_TAG, "no internet");
 		}

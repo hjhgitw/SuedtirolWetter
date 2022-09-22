@@ -1,10 +1,10 @@
 package com.vulci.suedtirolwetter.sax;
 
-import java.util.HashMap;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
+
+import java.util.HashMap;
 
 public class ProvBulletin implements Parcelable {
 

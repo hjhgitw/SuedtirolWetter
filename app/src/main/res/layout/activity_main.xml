@@ -24,7 +24,7 @@
 			android:layout_height="wrap_content"
 			android:layout_gravity="start"
 			android:textColor="#FFFFFF"
-			android:textSize="24sp"/>
+			android:textSize="24sp" />
 
 		<TextView
 			android:id="@+id/toolbar_http"
@@ -34,7 +34,7 @@
 			android:layout_gravity="left"
 			android:text="loading"
 			android:textColor="#FFFFFF"
-			android:textSize="11sp"/>
+			android:textSize="11sp" />
 
 	</androidx.appcompat.widget.Toolbar>
 
