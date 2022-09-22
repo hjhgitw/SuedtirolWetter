@@ -68,7 +68,7 @@ public class UpdateWidgetService extends IntentService {
 		HashMap<Integer, StationData> stationDataMap = null;
 		ProvBulletin provBulletin = null;
 
-		if (SuedtirolWeatherApplication.isDataConnected(context)) {
+		if (Utils.isDataConnected(context)) {
 
 			String myDisplayLang = Locale.getDefault().getLanguage();
 
@@ -120,13 +120,12 @@ public class UpdateWidgetService extends IntentService {
 								R.id.textViewWetterdatenUeberschrift,
 								cityName
 										+ " - "
-										+ SuedtirolWeatherApplication
-										.formatTimestamp(provBulletin
+										+ Utils.formatTimestamp(provBulletin
 												.getDate()));
 
 				remoteViews.setTextViewText(R.id.textViewHoechsttemperatur,
 						"Max : " + stationData.getTemperatureData().getMax()
-								+ " �C");
+								+ " C");
 				remoteViews.setTextViewText(R.id.textViewTiefsttemperatur,
 						"Min : " + stationData.getTemperatureData().getMin()
 								+ " �C");

@@ -4,7 +4,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:layout_margin="3dip"
-	android:background="@drawable/myshape">
+	android:background="@drawable/shape_widget">
 
 	<TextView
 		android:id="@+id/textViewWetterdatenUeberschrift"
@@ -14,20 +14,21 @@
 		android:layout_marginLeft="10dp"
 		android:layout_marginTop="6dp"
 		android:gravity="center_horizontal"
-		android:shadowColor="#c0c0c0"
+		android:shadowColor="#673AB7"
 		android:shadowDx="1.0"
 		android:shadowDy="1.0"
 		android:text="wetterdatum"
-		android:textColor="#fff"
-		android:textSize="10sp" />
+		android:textColor="#42325E"
+		android:textSize="11sp" />
 
 	<ImageView
 		android:id="@+id/imageViewIcon"
-		android:layout_width="45dip"
-		android:layout_height="45dip"
-		android:layout_alignLeft="@+id/textViewWetterdatenUeberschrift"
+		android:layout_width="43dp"
+		android:layout_height="43dp"
 		android:layout_below="@id/textViewWetterdatenUeberschrift"
-		android:layout_marginTop="3dp"
+		android:layout_alignLeft="@+id/textViewWetterdatenUeberschrift"
+		android:layout_marginLeft="-1dp"
+		android:layout_marginTop="0dp"
 		android:scaleType="fitXY"
 		android:src="@drawable/icon_1" />
 
@@ -36,33 +37,37 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/textViewWetterdatenUeberschrift"
-		android:layout_marginTop="3dp"
+		android:layout_marginLeft="11dp"
+		android:layout_marginTop="1dp"
 		android:layout_toRightOf="@+id/imageViewIcon"
 		android:text="load"
-		android:textColor="#fff"
-		android:textSize="10sp" />
+		android:textColor="#ED3B3B"
+		android:textSize="11sp" />
 
 	<TextView
 		android:id="@+id/textViewTiefsttemperatur"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignLeft="@+id/textViewHoechsttemperatur"
 		android:layout_below="@+id/textViewHoechsttemperatur"
-		android:layout_marginTop="3dp"
+		android:layout_alignLeft="@+id/textViewHoechsttemperatur"
+		android:layout_marginLeft="-1dp"
+		android:layout_marginTop="8dp"
 		android:text="update"
-		android:textColor="#fff"
-		android:textSize="10sp" />
+		android:textColor="#2196F3"
+		android:textSize="11sp" />
 
 	<TextView
 		android:id="@+id/textViewdescription"
-		android:layout_width="wrap_content"
+		android:layout_width="111dp"
 		android:layout_height="wrap_content"
+		android:layout_below="@+id/textViewTiefsttemperatur"
 		android:layout_alignLeft="@+id/textViewWetterdatenUeberschrift"
 		android:layout_alignRight="@+id/textViewTiefsttemperatur"
-		android:layout_below="@+id/textViewTiefsttemperatur"
-		android:layout_marginTop="3dip"
-		android:text="."
-		android:textColor="#fff"
-		android:textSize="10sp" />
+		android:layout_marginLeft="-1dp"
+		android:layout_marginTop="-1dp"
+		android:layout_marginRight="-19dp"
+		android:text="Data"
+		android:textColor="#009688"
+		android:textSize="12sp" />
 
 </RelativeLayout>
